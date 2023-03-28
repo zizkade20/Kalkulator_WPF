@@ -19,7 +19,11 @@ namespace WpfApp2
     /// <summary>
     /// Interakční logika pro MainWindow.xaml
     /// </summary>
-    
+    class Globals
+    {
+
+        public static string lastOperatorClicked { get; set; } // správná odpověď, kterou budu porovnávat s contentem buttonu
+    }
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -27,6 +31,9 @@ namespace WpfApp2
             
             InitializeComponent();
             vysledekLabel.Content = 0;
+
+            Globals.lastOperatorClicked = "";
+
 
             System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
             customCulture.NumberFormat.NumberDecimalSeparator = ".";
@@ -37,10 +44,12 @@ namespace WpfApp2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
+
             Button button = sender as Button;
 
             string buttonText = button.Content.ToString();
 
+            
             if (buttonText == "C")
             {
                 vysledekLabel.Content = 0;
@@ -71,9 +80,17 @@ namespace WpfApp2
                 }
 
             }
-            
             else if (buttonText == "=")
             {
+                if (Globals.lastOperatorClicked == "+" || Globals.lastOperatorClicked == "-" || Globals.lastOperatorClicked == "*")
+                {
+                    vysledekLabel.Content += "0";
+                } else if (Globals.lastOperatorClicked == "/")
+                {
+                    vysledekLabel.Content += "1";
+                }
+                Globals.lastOperatorClicked = "";
+
                 DataTable dt = new DataTable();
                 var v = dt.Compute(vysledekLabel.Content.ToString(), "");
 
@@ -81,26 +98,36 @@ namespace WpfApp2
             }
             else
             {
+                
                 if (vysledekLabel.Content.ToString() == "0" && buttonText != "+" && buttonText != "-" && buttonText != "*" && buttonText != "/")
                 {
                     vysledekLabel.Content = buttonText;
+                    Globals.lastOperatorClicked = "";
 
                 } else
                 {
+
                     if (buttonText == "+" || buttonText == "-" || buttonText == "*" || buttonText == "/")
                     {
-                        if (vysledekLabel.Content.ToString().Contains("+-*/")){
-                        
+                        if (Globals.lastOperatorClicked == "+" || Globals.lastOperatorClicked == "-" || Globals.lastOperatorClicked == "*" || Globals.lastOperatorClicked == "/")
+                        {
+                            
+                            
                         } else
                         {
+                            Globals.lastOperatorClicked = buttonText;
                             vysledekLabel.Content += buttonText;
-
                         }
+                        
+
                     } else
                     {
                         vysledekLabel.Content += buttonText;
+                        Globals.lastOperatorClicked = "";
 
                     }
+                    
+                    
                     
 
                 }

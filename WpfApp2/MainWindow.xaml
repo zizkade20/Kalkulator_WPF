@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
-        Title="fortnite" Height="450" Width="300">
+        Title="fortnite" Height="450" Width="300" MinHeight="300" MinWidth="200">
     <Grid>
         <Grid Margin="0,83,0,0">
             <Grid.ColumnDefinitions>
@@ -25,32 +25,32 @@
 
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="1" Grid.ColumnSpan="2" Click="Button_Click">CE</Button>
-            <Button Grid.Column="0" Grid.Row="0" Click="Button_Click">C</Button>
+            <Button FontSize="25" Grid.Column="1" Grid.ColumnSpan="2" Click="Button_Click">CE</Button>
+            <Button FontSize="25" Grid.Column="0" Grid.Row="0" Click="Button_Click">C</Button>
 
-            <Button Grid.Column="3" Grid.Row="0" Click="Button_Click">=</Button>
+            <Button Background="Green" FontSize="25" Grid.Column="3" Grid.Row="0" Click="Button_Click">=</Button>
 
 
-            <Button Grid.Row="1" Click="Button_Click">7</Button>
-            <Button Grid.Column="1" Grid.Row="1" Click="Button_Click">8</Button>
-            <Button Grid.Column="2" Grid.Row="1" Click="Button_Click">9</Button>
-            <Button Grid.Column="3" Grid.Row="1" Click="Button_Click">+</Button>
+            <Button FontSize="25" Grid.Row="1" Click="Button_Click">7</Button>
+            <Button FontSize="25" Grid.Column="1" Grid.Row="1" Click="Button_Click">8</Button>
+            <Button FontSize="25" Grid.Column="2" Grid.Row="1" Click="Button_Click">9</Button>
+            <Button FontSize="25" Grid.Column="3" Grid.Row="1" Click="Button_Click">+</Button>
 
-            <Button Grid.Row="2" Click="Button_Click">4</Button>
-            <Button Grid.Column="1" Grid.Row="2" Click="Button_Click">5</Button>
-            <Button Grid.Column="2" Grid.Row="2" Click="Button_Click">6</Button>
-            <Button Grid.Column="3" Grid.Row="2" Click="Button_Click">-</Button>
+            <Button FontSize="25" Grid.Row="2" Click="Button_Click">4</Button>
+            <Button FontSize="25" Grid.Column="1" Grid.Row="2" Click="Button_Click">5</Button>
+            <Button FontSize="25" Grid.Column="2" Grid.Row="2" Click="Button_Click">6</Button>
+            <Button FontSize="25" Grid.Column="3" Grid.Row="2" Click="Button_Click">-</Button>
 
-            <Button Grid.Row="3" Click="Button_Click">1</Button>
-            <Button Grid.Column="1" Grid.Row="3" Click="Button_Click">2</Button>
-            <Button Grid.Column="2" Grid.Row="3" Click="Button_Click">3</Button>
-            <Button Grid.Column="3" Grid.Row="3" Click="Button_Click">*</Button>
-            <Button Grid.Column="0" Grid.Row="4" Click="Button_Click">.</Button>
+            <Button FontSize="25" Grid.Row="3" Click="Button_Click">1</Button>
+            <Button FontSize="25" Grid.Column="1" Grid.Row="3" Click="Button_Click">2</Button>
+            <Button FontSize="25" Grid.Column="2" Grid.Row="3" Click="Button_Click">3</Button>
+            <Button FontSize="25" Grid.Column="3" Grid.Row="3" Click="Button_Click">*</Button>
+            <Button FontSize="25" Grid.Column="0" Grid.Row="4" Click="Button_Click">.</Button>
 
-            <Button Grid.Column="1" Grid.Row="4"  Grid.ColumnSpan="2" Click="Button_Click">0</Button>
-            <Button Grid.Column="3" Grid.Row="4" Click="Button_Click">/</Button>
+            <Button FontSize="25" Grid.Column="1" Grid.Row="4"  Grid.ColumnSpan="2" Click="Button_Click">0</Button>
+            <Button FontSize="25" Grid.Column="3" Grid.Row="4" Click="Button_Click">/</Button>
 
         </Grid>
-        <Label Name="vysledekLabel" Content="" HorizontalAlignment="Left" Margin="47,30,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="25"  Name="vysledekLabel" Content="" HorizontalAlignment="Left" Margin="47,30,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
