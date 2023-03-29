@@ -51,6 +51,6 @@
             <Button FontSize="25" Grid.Column="3" Grid.Row="4" Click="Button_Click">/</Button>
 
         </Grid>
-        <Label FontSize="25"  Name="vysledekLabel" Content="" HorizontalAlignment="Left" Margin="47,30,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="25"  Name="vysledekLabel" Content="0" HorizontalAlignment="Left" Margin="47,30,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

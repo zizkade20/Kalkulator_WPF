@@ -16,13 +16,11 @@ using System.Windows.Shapes;
 
 namespace WpfApp2
 {
-    /// <summary>
-    /// Interakční logika pro MainWindow.xaml
-    /// </summary>
+    
     class Globals
     {
 
-        public static string lastOperatorClicked { get; set; } // správná odpověď, kterou budu porovnávat s contentem buttonu
+        public static string lastOperatorClicked { get; set; }
     }
     public partial class MainWindow : Window
     {
@@ -52,7 +50,7 @@ namespace WpfApp2
             
             if (buttonText == "C")
             {
-                vysledekLabel.Content = 0;
+                vysledekLabel.Content = "0";
             }
             else if (buttonText == ".")
             {
@@ -89,6 +87,7 @@ namespace WpfApp2
                 {
                     vysledekLabel.Content += "1";
                 }
+                
                 Globals.lastOperatorClicked = "";
 
                 DataTable dt = new DataTable();
@@ -98,7 +97,10 @@ namespace WpfApp2
             }
             else
             {
-                
+                if (vysledekLabel.Content.ToString() == "NaN")
+                {
+                    vysledekLabel.Content = "0";
+                }
                 if (vysledekLabel.Content.ToString() == "0" && buttonText != "+" && buttonText != "-" && buttonText != "*" && buttonText != "/")
                 {
                     vysledekLabel.Content = buttonText;
@@ -131,6 +133,8 @@ namespace WpfApp2
                     
 
                 }
+                
+                
 
                 
             }
