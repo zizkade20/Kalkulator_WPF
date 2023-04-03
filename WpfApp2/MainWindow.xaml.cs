@@ -80,7 +80,14 @@ namespace WpfApp2
             }
             else if (buttonText == "=")
             {
-                if (Globals.lastOperatorClicked == "+" || Globals.lastOperatorClicked == "-" || Globals.lastOperatorClicked == "*")
+                if (vysledekLabel.Content.ToString().Contains("∞"))
+                {
+                    vysledekLabel.Content = 0;
+                } else if (vysledekLabel.Content.ToString() == "NaN")
+                {
+                    vysledekLabel.Content = 0;
+                }
+                else if (Globals.lastOperatorClicked == "+" || Globals.lastOperatorClicked == "-" || Globals.lastOperatorClicked == "*")
                 {
                     vysledekLabel.Content += "0";
                 } else if (Globals.lastOperatorClicked == "/")
@@ -88,6 +95,7 @@ namespace WpfApp2
                     vysledekLabel.Content += "1";
                 }
                 
+
                 Globals.lastOperatorClicked = "";
 
                 DataTable dt = new DataTable();
